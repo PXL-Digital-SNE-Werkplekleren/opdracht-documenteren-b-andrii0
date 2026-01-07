@@ -115,7 +115,7 @@ switch_config
 Floor1-SW#show running-config 
 Building configuration...
 
-Current configuration : 1672 bytes
+Current configuration : 1865 bytes
 !
 version 15.0
 no service timestamps log datetime msec
@@ -123,6 +123,7 @@ no service timestamps debug datetime msec
 service password-encryption
 !
 hostname Floor1-SW
+!
 !
 enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
 !
@@ -206,6 +207,17 @@ interface GigabitEthernet0/2
 interface Vlan1
  no ip address
  shutdown
+!
+interface Vlan10
+ ip address 192.168.10.2 255.255.255.0
+ ipv6 address 2001:DB8:ACAD:10::2/64
+!
+interface Vlan20
+ ip address 192.168.10.2 255.255.255.0
+!
+ip default-gateway 192.168.10.1
+!
+!
 !
 !
 !
